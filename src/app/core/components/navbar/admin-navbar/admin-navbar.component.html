@@ -1,0 +1,61 @@
+<!-- admin-navbar.component.html -->
+<nav class="navbar bg-light border border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/landing">
+        <img [src]="logoPath" alt="Logo" style="height: 60px;">
+      </a>
+      <div class="d-none d-lg-flex align-items-center ms-auto me-4">
+        Welcome,&nbsp;<span class="text-dark">{{ userName }}</span>
+        <!-- Add Logout Button -->
+        <button class="btn btn-outline-danger ms-3" (click)="logout()">Logout</button>
+      </div>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom">
+          <a class="navbar-brand" href="#">
+            <img [src]="logoPath" alt="Logo">
+          </a>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+          <ul class="navbar-nav flex-column mb-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" >Welcome to {{ firstname }}'s portal</a>
+            </li>
+            <li class="nav-item">
+              <hr>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/dashboard">Dashboard</a> <!-- Correct route for dashboard -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/users">User List</a> <!-- Correct route for user list -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/orders">Order List</a> <!-- Correct route for order list -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/users">Empty</a>
+            </li>
+          </ul>
+          <div class="mt-auto">
+            <ul class="navbar-nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/landing">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/pricing">Shop</a>
+              </li>
+            </ul>
+            <div class="d-flex d-lg-none align-items-center mt-3">
+              Welcome,&nbsp;<span class="text-dark">{{ userName }}</span>
+              <button class="btn btn-outline-danger ms-3" (click)="logout()">Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

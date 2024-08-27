@@ -1,0 +1,34 @@
+
+<div class="container">
+    <h2>Welcome, {{ user?.firstName }} {{ user?.lastName }}</h2>
+  
+    <div class="my-3">
+      <label for="cardSelect" class="form-label">Select a User Card:</label>
+      <select id="cardSelect" class="form-select" (change)="onSelectCard($event)">
+        <option *ngFor="let card of userCards" [value]="card.id" [selected]="card === selectedCard">
+          {{ card.name || 'Unnamed Card' }}
+        </option>
+      </select>
+    </div>
+  
+    <div *ngIf="selectedCard" class="my-4">
+      <label for="newCardName" class="form-label">Rename Card:</label>
+      <div class="input-group">
+        <input
+          id="newCardName"
+          type="text"
+          [(ngModel)]="newCardName"
+          class="form-control"
+          placeholder="Enter new card name"
+        />
+        <button (click)="renameCard()" class="btn btn-primary">Rename</button>
+      </div>
+
+      <p><strong>Number of Scans:</strong> {{ visitCount !== null ? visitCount : 'Loading...' }}</p>
+      
+    </div>
+  </div>
+  
+
+
+

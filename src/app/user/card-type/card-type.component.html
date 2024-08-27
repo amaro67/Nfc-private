@@ -1,0 +1,84 @@
+
+<div class="container">
+    <div class="row shadow-lg rounded">
+      <!-- Left Section: Options (Yellow) -->
+      <div class="col-12 col-lg-5 border border-end-0 rounded-start">
+        <div class="p-4 mb-3">
+          <h5>Choose how to display your tap</h5>
+          <p>Select how you want to display your info when your card is being tapped.</p>
+          <div class="list-group">
+            <button class="list-group-item list-group-item-action" [ngClass]="{'active': selectedOption === 'landing'}" (click)="onOptionSelect('landing')">
+              Personal Landing Page
+              <i *ngIf="selectedOption === 'landing'" class="bi bi-check float-end"></i>
+            </button>
+            <button class="list-group-item list-group-item-action" [ngClass]="{'active': selectedOption === 'contact'}" (click)="onOptionSelect('contact')">
+              Contact Page
+              <i *ngIf="selectedOption === 'contact'" class="bi bi-check float-end"></i>
+            </button>
+            <button class="list-group-item list-group-item-action" [ngClass]="{'active': selectedOption === 'custom'}" (click)="onOptionSelect('custom')">
+              Custom URL
+              <i *ngIf="selectedOption === 'custom'" class="bi bi-check float-end"></i>
+            </button>
+          </div>
+        </div>
+  
+        <div class="d-none d-lg-block p-4 mt-3 mt-lg-0">
+          <h6>Export your QR code</h6>
+          <p>Export QR code and share it without limits.</p>
+          <div class="text-center">
+            <img src="path_to_qr_code_image" alt="QR Code" class="img-fluid mb-3" style="max-width: 150px;">
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-primary">Export</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right Section: Display Based on Selected Option (Green) -->
+      <div class="col-lg-7 order-lg-2 border border-start-0 rounded-end p-4">
+        <div *ngIf="selectedOption === 'landing'" class="text-center">
+          <!-- Mockup of the landing page -->
+            <div class="mx-auto">
+                <img [src]="Landing" alt="" class="">
+            </div>
+        </div>
+        <div *ngIf="selectedOption === 'contact'" class="">
+          <!-- Generated VCF file download link -->
+          <div class="position-relative text-center">
+            <div class="mx-auto">
+                <img [src]="ContactBook" alt="" class="">
+                <a [href]="vcfFileUrl" class="btn btn-info position-absolute top-50 start-50 translate-middle" download="contact-info.vcf">Download VCF</a>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="selectedOption === 'custom'" class="text-center">
+          <!-- Screen image for custom URL -->
+          <div class="position-relative text-center">
+            <div class="mx-auto">
+              <img [src]="Google" alt="" class="">
+              <!-- Custom URL Input Field -->
+              <div *ngIf="selectedOption === 'custom'" class="mt-4 position-absolute start-50 top-50 translate-middle">
+                <input type="text" class="form-control rounded w-100" [(ngModel)]="customUrl" placeholder="Enter custom URL here">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-5 d-block d-lg-none">  
+        <div class=" p-4 mt-3 mt-lg-0">
+            <h6>Export your QR code</h6>
+            <p>Export QR code and share it without limits.</p>
+            <div class="text-center">
+              <img src="path_to_qr_code_image" alt="QR Code" class="img-fluid mb-3" style="max-width: 150px;">
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary">Export</button>
+            </div>
+          </div>
+      </div>
+
+
+    </div>
+  </div>
+  

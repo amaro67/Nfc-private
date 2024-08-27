@@ -1,0 +1,20 @@
+// src/assets/image-paths.ts
+export const IMAGE_PATHS = {
+  logo: 'assets/images/LogoColor.svg',
+  screens : 'assets/images/Screens.svg',
+  noApp : 'assets/images/NoApp.svg',
+  NFC : 'assets/images/NFC.svg',
+  QR : 'assets/images/Qr.svg',
+  premium : 'assets/images/Premium.svg',
+  professional : 'assets/images/Professional.svg',
+  standard : 'assets/images/Standard.svg',
+  cards : 'assets/images/Cards.svg',
+  logoWhite: 'assets/images/LogoWhite.svg',
+  logoBg: 'assets/images/LogoBg.svg',
+  LoginRegister: 'assets/images/PlaceholderLogReg.svg',
+  iPhoneMockup: 'assets/images/iPhoneMockup.svg',
+  amar: 'assets/images/AmarUser.svg',
+  Google: 'assets/images/Google.svg',
+  ContactBook: 'assets/images/ContactBook.svg',
+  Landing: 'assets/images/Landing.svg',
+};

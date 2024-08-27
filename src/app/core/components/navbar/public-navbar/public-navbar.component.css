@@ -1,0 +1,15 @@
+@media (max-width: 991.98px) { /* Targeting screens smaller than lg (992px) */
+    .navbar-collapse {
+      min-height: 90vh;
+    }
+
+  #navbarTogglerDemo02.collapsing {
+    height: 90vh !important;
+  }
+  
+  #navbarTogglerDemo02.collapse.show {
+    height: 90vh !important;
+  }
+  }
+
+  

@@ -1,0 +1,47 @@
+
+
+<div class="container-fluid py-5 my-5">
+  <div class="container pt-4">
+    <p class="display-6">Users</p>
+    <p class="lead opacity-75 mb-5">Show all users and manage their existing.</p>
+
+
+
+    <div *ngIf="loading">Loading users...</div>
+    <div *ngIf="error">{{ error }}</div>
+
+
+    <div class="table-responsive-lg text-center">
+      <table class="table table-hover align-middle">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role ID</th>
+            <th scope="col">Active</th>
+            <th scope="col">Deactivate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" class="bg-white">
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role ? 'Admin' : 'User' }}</td>
+            <td>{{ user.isActive ? 'Yes' : 'No' }}</td>
+            <td><button class="btn btn-danger"><i class="bi bi-trash"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div *ngIf="!loading && !users.length">No users found.</div>
+
+    
+  </div>
+</div>
+

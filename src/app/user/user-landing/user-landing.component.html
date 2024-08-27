@@ -1,0 +1,34 @@
+<div *ngIf="selectedCard && userCardDetails.length">
+    <h1>{{ selectedCard.name }}</h1>
+    
+    <div *ngIf="userCardDetails.length > 0">
+      <h2>Personal Details</h2>
+      <div *ngFor="let detail of userCardDetails">
+        <p><strong>{{ detail.name }}:</strong> {{ detail.fieldValue }}</p>
+      </div>
+    </div>
+    
+    <!-- You can further categorize and display details like Personal, Contact, Social, etc. -->
+  </div>
+  
+  <div *ngIf="!selectedCard">
+    <p>No card selected.</p>
+  </div>
+  
+
+
+
+  <!-- <div *ngIf="selectedCard">
+    <h1>{{ selectedCard.name }}</h1>
+    <div *ngIf="selectedCard.type === 'landing'">
+      Render the user's personal landing page
+    </div>
+    <div *ngIf="selectedCard.type === 'contact'">
+      Render the contact page with VCF download
+    </div>
+    <div *ngIf="selectedCard.type === 'custom'">
+      Redirect to the custom URL
+      <a [href]="selectedCard.customUrl" target="_blank">Visit Custom URL</a>
+    </div>
+  </div> -->
+  

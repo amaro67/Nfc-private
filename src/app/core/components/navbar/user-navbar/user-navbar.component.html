@@ -1,0 +1,67 @@
+<nav class="navbar bg-light border border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/landing">
+        <img [src]="logoPath" alt="Logo" style="height: 60px;">
+      </a>
+      <div class="d-none d-lg-flex align-items-center ms-auto me-4">
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle px-3" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Hello, <span class="">{{ firstname }}</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="userDropdown">
+            <li>
+              <button class="dropdown-item text-danger" (click)="logout()">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom">
+          <a class="navbar-brand" href="#">
+            <img [src]="logoPath" alt="Logo">
+          </a>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+          <ul class="navbar-nav flex-column mb-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" >Welcome to {{ firstname }}'s portal</a>
+            </li>
+            <li class="nav-item">
+              <hr>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user/user-dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user/user-profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user/page-builder">Page Builder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user/card-type">Card Type</a>
+            </li>
+          </ul>
+          <div class="mt-auto">
+            <ul class="navbar-nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/landing">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/pricing">Shop</a>
+              </li>
+            </ul>
+            <div class="d-block d-lg-none mt-2">
+              <!-- Logout button for smaller screens -->
+              <a class="text-danger text-decoration-none" (click)="logout()">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

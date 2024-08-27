@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="container bg-white">
+    <div *ngIf="user">
+      <h2>Welcome, {{ user.firstName }} {{ user.lastName }}</h2>
+
+      <div *ngIf="selectedCard" class="">
+
+        <div class="row mt-5">
+          <div class="col-12 col-lg-3">
+            <div class="w-100 bg-light border text-center">
+              <br><br><br><br><br>ImageBox<br><br><br><br><br>
+            </div>
+            <h5>Personal Details</h5>
+            <div *ngFor="let detail of personalDetails" class="mb-3">
+              <label>{{ detail.name }}</label>
+              <input type="text" [(ngModel)]="detail.fieldValue" class="form-control" [placeholder]="detail.name">
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <h5>Contact Details</h5>
+            <div *ngFor="let detail of contactDetails" class="mb-3">
+              <label>{{ detail.name }}</label>
+              <input type="text" [(ngModel)]="detail.fieldValue" class="form-control" [placeholder]="detail.name">
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <h5>Social Details</h5>
+            <div *ngFor="let detail of socialDetails" class="mb-3">
+              <label>{{ detail.name }}</label>
+              <input type="text" [(ngModel)]="detail.fieldValue" class="form-control" [placeholder]="detail.name">
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <h5>Message Details</h5>
+            <div *ngFor="let detail of messageDetails" class="mb-3">
+              <label>{{ detail.name }}</label>
+              <input type="text" [(ngModel)]="detail.fieldValue" class="form-control" [placeholder]="detail.name">
+            </div>
+            <h5 class="mt-5 mb-4">Payment Details</h5>
+            <div *ngFor="let detail of paymentDetails" class="mb-3">
+              <label>{{ detail.name }}</label>
+              <input type="text" [(ngModel)]="detail.fieldValue" class="form-control" [placeholder]="detail.name">
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button (click)="updateCardDetails()" class="btn btn-success">Save Card Details</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!user">
+      <p>No user information available.</p>
+    </div>
+  </div>
+</div>
+
+
+

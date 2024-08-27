@@ -1,0 +1,8 @@
+.footer .social-icons a {
+    color: #343a40; /* Bootstrap's text-dark */
+    font-size: 20px;
+    margin: 0 10px;
+}
+.footer .social-icons a:hover {
+    color: #495057; /* Bootstrap's text-secondary */
+}

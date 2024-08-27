@@ -1,0 +1,79 @@
+<div class="container-fluid position-relative text-white py-5" style="background: linear-gradient(to bottom,#030637,#720455);">
+  <!-- <img [src]="logoBg" class="position-absolute top-50 end-0 translate-middle-y d-none d-lg-block" alt=""> -->
+
+  <div class="container text-center my-4 py-4">
+    <div class="col-12 my-4">
+      <span class="border border-light rounded-pill px-4 py-2 fs-6">Your Digital Card</span>
+    </div>
+    <div class="col-12 col-lg-12 mx-auto my-4">
+      <p class="display-3">Find the Perfect NFC Card to Match Your Requirements</p>
+    </div>
+    <div class="col-12 col-lg-12 mx-auto my-4">
+      <p class="lead opacity-75">Find the Perfect NFC Card to Match Your Requirements</p>
+    </div>
+    <div class="col-12 my-4">
+      <a class="text-white rounded-pill text-decoration-none px-4 py-2 d-inline-block" style="background-color: rgba(255, 255, 255, 0.25); border: 1px solid rgba(255, 255, 255, 0.25);">
+        Explore Products <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="container position-relative py-4 mb-4">
+    <div class="row text-center position-absolute w-100" style="top: -50%; z-index: 1;">
+      <div class="col-12 col-lg-12 mx-auto">
+        <app-pricing-carousel></app-pricing-carousel>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-5 py-5">
+  <div class="container">
+    <div class="col py-5 my-5">
+      <div class="col py-5 my-5"></div>
+    </div>
+    <ng-container *ngFor="let product of products">
+      <app-product [product]="product"></app-product>
+    </ng-container>
+  </div>
+</div>
+
+<!-- <div class="container-fluid py-2">
+  <div class="container">
+    <div class="row my-4 py-4">
+      <div class="col-12 my-2 text-center">
+        <span class="border bg-white rounded-pill px-4 py-2 fs-6">Contact Us</span>
+      </div>
+      <div class="col-12 col-lg-12 mx-auto my-3 text-center">
+        <p class="fs-1 text-break">Have a Question?</p>
+      </div>
+      <div class="col-12 col-lg-8 mx-auto my-3">
+        <div class="row">
+          <div class="col-12 col-lg-6 my-3">
+            <label for="formGroupExampleInput" class="form-label">First name</label>
+            <input type="text" class="form-control rounded-4 bg-light" id="formGroupExampleInput" placeholder="Enter your first name">
+          </div>
+          <div class="col-12 col-lg-6 my-3">
+            <label for="formGroupExampleInput" class="form-label">Last name</label>
+            <input type="text" class="form-control rounded-4 bg-light" id="formGroupExampleInput" placeholder="Enter your last name">
+          </div>
+          <div class="col-12 my-3">
+            <label for="formGroupExampleInput" class="form-label">Email</label>
+            <input type="email" class="form-control rounded-4 bg-light" id="formGroupExampleInput" placeholder="Enter your email address">
+          </div>
+          <div class="col-12 my-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control rounded-4 bg-light" id="exampleFormControlTextarea1" rows="4" placeholder="Enter your message for us"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 mx-auto py-4 text-center">
+        <button type="submit" class="btn btn-outline-dark py-2 px-5 rounded-pill text-white" style="background: linear-gradient(to bottom,#030637,#720455); border: none;">Send</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<app-faq></app-faq>

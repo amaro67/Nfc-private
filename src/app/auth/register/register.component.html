@@ -1,0 +1,60 @@
+<!-- src/app/auth/register/register.component.html -->
+<div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center py-5" style="background: linear-gradient(to bottom,#030637,#720455);">
+  <div class="container bg-white rounded-3">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12 col-lg-8 p-5">
+          <div class="row">
+            <div class="col-12">
+              <img [src]="logoPath" alt="">
+            </div>
+            <div class="col-12 mt-3">
+              <p class="fs-1 text-break">Join UniDigital!</p>
+            </div>
+            <div class="col-12 mb-3">
+              <p class="lead opacity-75 text-break">Get the latest in networking with our custom NFC cards. Tap to link the physical and digital worlds.</p>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <label for="fName" class="form-label">First name</label>
+              <input type="text" class="form-control bg-light" id="fName" formControlName="firstName" placeholder="Enter your first name">
+              <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="text-danger">First name is required</div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <label for="lName" class="form-label">Last name</label>
+              <input type="text" class="form-control bg-light" id="lName" formControlName="lastName" placeholder="Enter your last name">
+              <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="text-danger">Last name is required</div>
+            </div>
+            <div class="col-12 mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control bg-light" id="email" formControlName="email" placeholder="Enter your email address">
+              <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+                <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</div>
+                <div *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email address</div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <label for="pass1" class="col-form-label">Password</label>
+              <div class="password-toggle" appShowHidePassword>
+                <input type="password" class="form-control bg-light" id="pass1" formControlName="password" placeholder="Enter your password">
+                <i class="bi bi-eye password-toggle-icon"></i>
+              </div>
+              <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">Password is required</div>
+            </div>
+            <div class="col-12 my-3">
+              <button type="submit" class="btn btn-outline-dark py-2 w-100 text-white" style="background: linear-gradient(to bottom,#030637,#720455); border: none;">Register</button>
+            </div>
+            <div class="col-12 my-3 text-center">
+              <p>Already have an account?<button (click)="redirectToLogin()"  class="border-0 bg-transparent text-decoration-underline fw-semibold">Sign in</button></p>
+            </div>
+            <div *ngIf="registrationError" class="col-12 my-3 text-center text-danger">
+              {{ registrationError }}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 d-flex justify-content-end align-items-end">
+          <img [src]="LoginRegister" alt="" class="w-100 mt-5">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,152 @@
+
+  <div class="container">
+    <h2 class="mt-5 mb-3">Welcome to Page Builder</h2>
+    <div class="row h-auto d-flex justify-content-center align-items-center shadow rounded">
+      <div class="col-12 col-lg-8 h-100 py-5">
+        <div class="position-relative text-center h-100">
+          <img [src]="iPhoneMock" alt="Phone Mockup" style="height:auto; max-height: 600px;width: 300px;">
+          <div class="phone-content position-absolute top-50 start-50 translate-middle d-block text-white p-4 h-95" style="width: 280px">
+            <div class="overflow-auto h-100 w-100 text-start">
+              <!-- Your data goes here -->
+              <div class="text-center">
+              <img [src]="amar" alt="Profile" class="rounded-circle img-thumbnail mb-3" style="width: 100px;">
+              <h4>Ime Prezime</h4>
+              <p class="mb-1">UniSource Founder</p>
+              <p class="mb-4">Unisource d.o.o Sarajevo</p>
+              </div>
+              <!-- Personal Details -->
+              <div class="category" *ngIf="personalDetails.length > 0">
+              <h4 class="border-bottom mb-3">Personal Details</h4>
+              <ng-container *ngFor="let detail of personalDetails">
+                <div class="mb-3" *ngIf="detail.isVisible">
+                    <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-between">
+                    {{ detail.name }}: {{ detail.fieldValue }}
+                    </button>
+                </div>
+              </ng-container>
+              </div>
+              <!-- Contact Details -->
+              <div class="category" *ngIf="contactDetails.length > 0">
+              <h4 class="border-bottom mb-3">Contact Details</h4>
+              <ng-container *ngFor="let detail of contactDetails">
+                <div class="mb-3" *ngIf="detail.isVisible">
+                    <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-between">
+                    {{ detail.name }}: {{ detail.fieldValue }}
+                    </button>
+                </div>
+              </ng-container>
+              </div>
+              <!-- Social Details -->
+              <div class="category" *ngIf="socialDetails.length > 0">
+              <h4 class="border-bottom mb-3">Social Details</h4>
+              <ng-container *ngFor="let detail of socialDetails">
+                <div class="mb-3" *ngIf="detail.isVisible">
+                    <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-between">
+                    {{ detail.name }}: {{ detail.fieldValue }}
+                    </button>
+                </div>
+              </ng-container>
+              </div>
+              <!-- Message Details -->
+              <div class="category" *ngIf="messageDetails.length > 0">
+              <h4 class="border-bottom mb-3">Message Details</h4>
+              <ng-container *ngFor="let detail of messageDetails">
+                <div class="mb-3" *ngIf="detail.isVisible">
+                    <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-between">
+                    {{ detail.name }}: {{ detail.fieldValue }}
+                    </button>
+                </div>
+              </ng-container>
+              </div>
+              <!-- Payment Details -->
+              <div class="category" *ngIf="paymentDetails.length > 0">
+              <h4 class="border-bottom mb-3">Payment Details</h4>
+              <ng-container *ngFor="let detail of paymentDetails">
+                <div class="mb-3" *ngIf="detail.isVisible">
+                    <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-between">
+                    {{ detail.name }}: {{ detail.fieldValue }}
+                    </button>
+                </div>
+              </ng-container>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 border p-0 h-100 rounded">
+        <p class="py-3 px-2 border m-0 fs-5">Dispay your informations</p>
+        <div class="overflow-auto py-3 px-2 border" style="height:650px;">
+           <div *ngIf="personalDetails.length > 0">
+              <h5>Personal Details</h5>
+              <div *ngFor="let detail of personalDetails" class="detail-item">
+                 <div class="d-flex align-items-center justify-content-between p-3 my-3 bg-light border rounded">
+                    <div class="d-flex align-items-center">
+                       <span>{{ detail.name }} | {{ detail.fieldValue }}</span>
+                    </div>
+                    <button (click)="toggleVisibility(detail)" class="btn btn-link p-0">
+                    <i [ngClass]="detail.isVisible ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>
+                    </button>
+                 </div>
+              </div>
+           </div>
+           <div *ngIf="contactDetails.length > 0">
+              <h5>Contact Details</h5>
+              <div *ngFor="let detail of contactDetails" class="detail-item">
+                 <div class="d-flex align-items-center justify-content-between p-3 my-3 bg-light border rounded">
+                    <div class="d-flex align-items-center">
+                       <span>{{ detail.name }} | {{ detail.fieldValue }}</span>
+                    </div>
+                    <button (click)="toggleVisibility(detail)" class="btn btn-link p-0">
+                    <i [ngClass]="detail.isVisible ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>
+                    </button>
+                 </div>
+              </div>
+           </div>
+           <div *ngIf="socialDetails.length > 0">
+              <h5>Social Details</h5>
+              <div *ngFor="let detail of socialDetails" class="detail-item">
+                 <div class="d-flex align-items-center justify-content-between p-3 my-3 bg-light border rounded">
+                    <div class="d-flex align-items-center">
+                       <span>{{ detail.name }} | {{ detail.fieldValue }}</span>
+                    </div>
+                    <button (click)="toggleVisibility(detail)" class="btn btn-link p-0">
+                    <i [ngClass]="detail.isVisible ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>
+                    </button>
+                 </div>
+              </div>
+           </div>
+           <div *ngIf="messageDetails.length > 0">
+              <h5>Message Details</h5>
+              <div *ngFor="let detail of messageDetails" class="detail-item">
+                 <div class="d-flex align-items-center justify-content-between p-3 my-3 bg-light border rounded">
+                    <div class="d-flex align-items-center">
+                       <span>{{ detail.name }} | {{ detail.fieldValue }}</span>
+                    </div>
+                    <button (click)="toggleVisibility(detail)" class="btn btn-link p-0">
+                    <i [ngClass]="detail.isVisible ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>
+                    </button>
+                 </div>
+              </div>
+           </div>
+           <div *ngIf="paymentDetails.length > 0">
+              <h5>Payment Details</h5>
+              <div *ngFor="let detail of paymentDetails" class="detail-item">
+                 <div class="d-flex align-items-center justify-content-between p-3 my-3 bg-light border rounded">
+                    <div class="d-flex align-items-center">
+                       <span>{{ detail.name }} | {{ detail.fieldValue }}</span>
+                    </div>
+                    <button (click)="toggleVisibility(detail)" class="btn btn-link p-0">
+                    <i [ngClass]="detail.isVisible ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>
+                    </button>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="d-none py-3 px-2 border">
+           <button class="btn w-100 text-white" style="background-color: #910A67;">Add a new link logic</button>
+        </div>
+     </div>
+    </div>
+  </div>
+
+
